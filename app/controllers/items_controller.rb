@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :login_check, only: [:new, :edit]
+  before_action :login_check, only: [:new, :edit ]
   before_action :item_find, only: [:show, :edit, :update]
   def index
     @items = Item.order("created_at DESC")
@@ -34,6 +34,15 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    unless user_signed_in? && current_user.id == @item.user_id
+      redirect_to root_path
+    else item_find.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def item_params
