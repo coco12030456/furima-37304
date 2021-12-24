@@ -142,10 +142,10 @@
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= "#{item.title}" %>
+            <%= item.title %>
           </h3>
           <div class='item-price'>
-            <span><%= "#{item.price}" %>円<br><%= "#{item.send_price.name}" %></span>
+            <span><%= item.price %>円<br><%= item.send_price.name %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
