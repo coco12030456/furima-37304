@@ -28,8 +28,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if item_find.update(item_params)
-      redirect_to item_path(item_find)
+    if @item.update(item_params)
+      redirect_to item_path(@item)
     else
       render :edit
     end
