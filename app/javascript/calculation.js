@@ -7,5 +7,4 @@ window.addEventListener('load', () => {
     const profit = document.getElementById("profit");
     profit.innerHTML = Math.round(item_price.value - Math.round(item_price.value * 0.1))
   })
-  end
 });
